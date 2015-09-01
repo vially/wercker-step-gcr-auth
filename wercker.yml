@@ -3,5 +3,15 @@ build:
   steps:
     - shellcheck
     - script:
+        name: install jq
+        code: wget -O $WERCKER_ROOT/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod a+x $WERCKER_ROOT/jq
+    - script:
+        name: install google cloud sdk
+        code: |
+          export CLOUDSDK_CORE_DISABLE_PROMPTS=true
+          wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz && tar -xvf google-cloud-sdk.tar.gz && google-cloud-sdk/install.sh && ln -s google-cloud-sdk/bin/gcloud $WERCKER_ROOT/gcloud
+    - script:
         name: prune
-        code: rm -rf $WERCKER_ROOT/.git
+        code: |
+          rm -rf $WERCKER_ROOT/.git
+          rm $WERCKER_ROOT/google-cloud-sdk.tar.gz
