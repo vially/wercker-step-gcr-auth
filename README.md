@@ -3,7 +3,6 @@ Wercker step for generating a temporary gcr.io authentication. The generated tok
 
 # Options
 
-- `account` The Google Cloud service account
 - `refresh_token` The Google Cloud service account refresh token
 
 # Example
@@ -12,7 +11,6 @@ Wercker step for generating a temporary gcr.io authentication. The generated tok
 deploy:
   steps:
     - appnific/gcr-auth:
-        service_account: <MY-GCLOUD-SERVICE-ACCOUNT>
         refresh_token: <MY-GCLOUD-REFRESH-TOKEN>
     - internal/docker-push:
         username: _token
