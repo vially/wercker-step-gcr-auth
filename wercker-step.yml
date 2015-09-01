@@ -1,0 +1,14 @@
+name: gcr-auth
+version: 0.1.0
+description: Obtains a temporary token which can be used to authenticate to gcr.io
+keywords:
+  - gcr
+  - authentication
+  - repository
+properties:
+  account:
+    type: string
+    required: true
+  refresh_token:
+    type: string
+    required: true

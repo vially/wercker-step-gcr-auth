@@ -1,0 +1,7 @@
+box: wercker/default
+build:
+  steps:
+    - shellcheck
+    - script:
+        name: prune
+        code: rm -rf $WERCKER_ROOT/.git
