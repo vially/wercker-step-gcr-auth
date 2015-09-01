@@ -14,4 +14,5 @@ build:
         name: prune
         code: |
           rm -rf $WERCKER_ROOT/.git
+          rm -rf $WERCKER_ROOT/google-cloud-sdk/.install
           rm $WERCKER_ROOT/google-cloud-sdk.tar.gz
