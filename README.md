@@ -1,5 +1,5 @@
 # step-gcr-auth
-Wercker step for generating a temporary gcr.io authentication. The generated token is stored in the `GCR_AUTH_TOKEN` environment variable.
+Wercker step for generating a temporary [gcr.io](https://cloud.google.com/container-registry/docs/) authentication token. The generated token is stored in the `GCR_AUTH_TOKEN` environment variable.
 
 # Options
 
